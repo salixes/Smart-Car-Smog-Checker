@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Vehicle Smog Detection</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- LOGIN/SIGNUP PAGE -->
+<div id="auth-page" class="auth-page">
+  <div class="auth-card">
+    <h1>Smart Vehicle Smog Detection</h1>
+    <div id="login-form">
+      <input type="text" id="login-user" placeholder="Username">
+      <input type="password" id="login-pass" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <span class="link" onclick="showSignup()">Sign Up</span></p>
+    </div>
+   <div id="signup-form" style="display:none;">
+  <input type="text" id="signup-user" placeholder="Username">
+    <input type="email" id="signup-email" placeholder="Email">
+  <input type="password" id="signup-pass" placeholder="Password">
+  <button onclick="signup()">Sign Up</button>
+  <p>Already have an account? <span class="link" onclick="showLogin()">Login</span></p>
+</div>
+
+  </div>
+</div>
+
+<!-- DASHBOARD PAGE -->
+<div id="dashboard-page" class="dashboard-page" style="display:none;">
+  <aside class="sidebar">
+    <h2>Smart Vehicle Smog Detection</h2>
+    <ul>
+      <li onclick="showSection('dashboard')">Dashboard</li>
+      <li onclick="showSection('live')">Live Monitoring</li>
+      <li onclick="showSection('pollution')">Pollution Levels</li>
+      <li onclick="showSection('alerts')">Alerts</li>
+      <li onclick="showSection('settings')">Settings</li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <!-- Dashboard Summary -->
+<div id="dashboard" class="section">
+  <h2>Smart Vehicle Smog Dashboard</h2>
+  <div class="dashboard-summary">
+    <div class="metric-card blue">
+      <div class="metric-icon">💨</div>
+      <div class="metric-info">
+        <div class="metric-label">Average Smog</div>
+        <div class="metric-value" id="avg-smog">0 μg/m³</div>
+      </div>
+    </div>
+    <div class="metric-card green">
+      <div class="metric-icon">⚡</div>
+      <div class="metric-info">
+        <div class="metric-label">Max Smog</div>
+        <div class="metric-value" id="max-smog">0 μg/m³</div>
+      </div>
+    </div>
+    <div class="metric-card yellow">
+      <div class="metric-icon">🚨</div>
+      <div class="metric-info">
+        <div class="metric-label">Alerts</div>
+        <div class="metric-value" id="alert-count">0</div>
+      </div>
+    </div>
+    <div class="metric-card cyan">
+      <div class="metric-icon">🖧</div>
+      <div class="metric-info">
+        <div class="metric-label">Sensors Online</div>
+        <div class="metric-value" id="sensor-count">1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-content">
+    <div class="chart-panel">
+      <h3>Smog Levels Over Time</h3>
+      <canvas id="smogChart"></canvas>
+    </div>
+    <div class="history-panel">
+      <h3>Event / History</h3>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+</div>
+
+    <!-- Live Monitoring -->
+    <div id="live" class="section" style="display:none;">
+      <button class="back-btn" onclick="showSection('dashboard')">← Back</button>
+      <h2>Live Smog Monitoring</h2>
+      <p>Current Smog Level: <span id="smog-level">0</span> μg/m³</p>
+      <div id="smog-intensity"><div id="smog-bar"></div></div>
+    </div>
+
+    <!-- Pollution Levels -->
+    <div id="pollution" class="section" style="display:none;">
+      <button class="back-btn" onclick="showSection('dashboard')">← Back</button>
+      <h2>Pollution Levels</h2>
+      <p>Current Smog: <span id="current-pollution">0</span> μg/m³</p>
+      <p>Average Smog: <span id="avg-pollution">0</span> μg/m³</p>
+      <p>Max Smog: <span id="max-pollution">0</span> μg/m³</p>
+    </div>
+
+    <!-- Alerts -->
+    <div id="alerts" class="section" style="display:none;">
+      <button class="back-btn" onclick="showSection('dashboard')">← Back</button>
+      <h2>Alerts</h2>
+      <div id="alerts-content"></div>
+    </div>
+
+    <!-- Settings -->
+    <div id="settings" class="section" style="display:none;">
+      <button class="back-btn" onclick="showSection('dashboard')">← Back</button>
+      <h2>Settings</h2>
+      <p>Username: <span id="settings-user"></span></p>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
