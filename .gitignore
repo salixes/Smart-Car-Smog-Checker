@@ -1,0 +1,4 @@
+node_modules/
+disc/
+out/
+.env
