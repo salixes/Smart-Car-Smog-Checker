@@ -396,3 +396,35 @@ body {
         font-size: 1.5rem;
     }
 }
+/* ===== MOBILE + ELECTRON RESPONSIVE SIDEBAR ===== */
+@media (max-width: 768px) {
+
+  .dashboard-page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    background: #1f2128;
+    z-index: 1000;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .main-content {
+    margin-bottom: 70px; /* space for bottom nav */
+    padding: 1rem;
+  }
+}

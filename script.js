@@ -110,3 +110,13 @@ function updateChart(){
 // Update every 5 seconds
 setInterval(updateSmog,5000);
 updateSmog();
+const bar = document.getElementById('smog-bar');
+const percent = Math.min((smogLevel / 200) * 100, 100);
+bar.style.width = percent + '%';
+
+if (smogLevel < 50) bar.style.background = '#2ecc71';
+else if (smogLevel < 100) bar.style.background = '#f1c40f';
+else if (smogLevel < 150) bar.style.background = '#e67e22';
+else bar.style.background = '#e74c3c';
+setInterval(updateSmog, 5000);
+updateSmog();
