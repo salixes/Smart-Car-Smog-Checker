@@ -9,11 +9,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@capacitor/cli": "^7.4.5",
     "@capacitor/core": "^8.0.2",
     "electron": "^40.2.1",
     "request": "^2.88.2"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

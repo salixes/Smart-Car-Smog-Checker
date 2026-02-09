@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", () => {
+  initApp();
+});
 // ---------- AUTH ----------
 function showLogin(){document.getElementById('login-form').style.display='block';}
 
